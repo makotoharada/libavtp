@@ -5,7 +5,7 @@ project(
 	license: 'BSD-3-Clause',
 )
 
-install_dir = '/home/atmark/Work/src/AVnu/libavtp/install/'
+install_dir = meson.current_source_dir() + '/install/'
 
 avtp_lib = library(
 	'avtp',
