@@ -34,6 +34,8 @@
 extern "C" {
 #endif
 
+#define ETH_P_TSN	0x22F0		/* TSN (IEEE 1722) packet	*/
+
 /* AVTP subtypes values. For further information refer to section 4.4.3.2 from
  * IEEE 1722-2016 spec.
  */
