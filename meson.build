@@ -5,6 +5,8 @@ project(
 	license: 'BSD-3-Clause',
 )
 
+install_dir = '/home/atmark/Work/src/AVnu/libavtp/install/'
+
 avtp_lib = library(
 	'avtp',
 	[
@@ -17,6 +19,7 @@ avtp_lib = library(
 	version: meson.project_version(),
 	include_directories: include_directories('include'),
 	install: true,
+	install_dir: install_dir + 'lib'
 )
 
 install_headers(
@@ -24,6 +27,7 @@ install_headers(
 	'include/avtp_aaf.h',
 	'include/avtp_crf.h',
 	'include/avtp_cvf.h',
+	install_dir: install_dir + 'include'
 )
 
 pkg = import('pkgconfig')
@@ -33,6 +37,7 @@ pkg.generate(
 	version: meson.project_version(),
 	url: 'github.com/AVnu/OpenAvnu',
 	libraries: avtp_lib,
+	install_dir: install_dir + 'pkg'
 )
 
 test_avtp = executable(
